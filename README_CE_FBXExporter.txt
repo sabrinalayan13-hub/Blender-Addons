@@ -1,0 +1,1 @@
+This exporter is very specifically setup to use the hard baked FBX export settings in the above file, these settings are intended for Conan Exiles devkit work in the Unreal Engine. The only setting that is dynamic is selecting where to export to. You cannot export more then 10 objects at once, this is a limitation I put on it.
