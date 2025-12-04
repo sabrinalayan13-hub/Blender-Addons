@@ -1,6 +1,6 @@
 bl_info = {
-    "name": "Zero's CE FBX Exporter",
-    "author": "Zero",
+    "name": "Sabrina's CE FBX Exporter",
+    "author": "Sabrina",
     "version": (1, 4),
     "blender": (4, 4, 0),
     "location": "View3D > Sidebar > FBX SM Export",
@@ -63,7 +63,7 @@ class OBJECT_OT_export_fbx_individual(bpy.types.Operator):
 
     def execute(self, context):
         scene = context.scene
-        export_folder = bpy.path.abspath(scene.zeros_export_folder)  # absolute path
+        export_folder = bpy.path.abspath(scene.Sabrinas_export_folder)  # absolute path
 
         if not export_folder or not os.path.exists(export_folder):
             self.report({'ERROR'}, f"Invalid export folder: {export_folder}")
@@ -109,8 +109,8 @@ class VIEW3D_PT_export_fbx_panel(bpy.types.Panel):
         scene = context.scene
 
         # Show absolute path
-        abs_path = bpy.path.abspath(scene.zeros_export_folder)
-        layout.prop(scene, "zeros_export_folder", text="Export Folder")
+        abs_path = bpy.path.abspath(scene.Sabrinas_export_folder)
+        layout.prop(scene, "Sabrinas_export_folder", text="Export Folder")
         layout.label(text=f"Resolved Path: {abs_path}")
         layout.operator("object.export_fbx_individual", text="Export Selected Objects")
 
@@ -121,7 +121,7 @@ def register():
     for cls in classes:
         bpy.utils.register_class(cls)
 
-    bpy.types.Scene.zeros_export_folder = bpy.props.StringProperty(
+    bpy.types.Scene.Sabrinas_export_folder = bpy.props.StringProperty(
         name="Export Folder",
         subtype='DIR_PATH'
     )
@@ -130,7 +130,8 @@ def unregister():
     for cls in classes:
         bpy.utils.unregister_class(cls)
 
-    del bpy.types.Scene.zeros_export_folder
+    del bpy.types.Scene.Sabrinas_export_folder
 
 if __name__ == "__main__":
     register()
+
