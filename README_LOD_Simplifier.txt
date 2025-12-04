@@ -6,4 +6,5 @@ The Zero lod simplifier is an addon for blender that:
 
 LOD0 = your original object you selected to create LODs of.
 
+
 There is an accompanying FBX Exporter tool as well called Zero's FBX exporter.
